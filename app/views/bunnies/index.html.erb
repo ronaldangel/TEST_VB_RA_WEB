@@ -1,0 +1,29 @@
+<h1>Listing bunnies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Article title</th>
+      <th>Bunny video</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bunnies.each do |bunny| %>
+      <tr>
+        <td><%= bunny.article_title %></td>
+        <td><%= bunny.bunny_video %></td>
+        <td><%= link_to 'Show', bunny %></td>
+        <td><%= link_to 'Edit', edit_bunny_path(bunny) %></td>
+        <td><%= link_to 'Destroy', bunny, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bunny', new_bunny_path %>

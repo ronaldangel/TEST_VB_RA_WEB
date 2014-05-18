@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Article title:</strong>
+  <%= @bunny.article_title %>
+</p>
+
+<p>
+  <strong>Bunny video:</strong>
+  <%= @bunny.bunny_video %>
+</p>
+
+<%= link_to 'Edit', edit_bunny_path(@bunny) %> |
+<%= link_to 'Back', bunnies_path %>

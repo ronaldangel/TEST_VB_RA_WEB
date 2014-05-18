@@ -1,0 +1,25 @@
+<%= form_for(@bunny) do |f| %>
+  <% if @bunny.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bunny.errors.count, "error") %> prohibited this bunny from being saved:</h2>
+
+      <ul>
+      <% @bunny.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :article_title %><br>
+    <%= f.text_field :article_title %>
+  </div>
+  <div class="field">
+    <%= f.label :bunny_video %><br>
+    <%= f.text_field :bunny_video %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
